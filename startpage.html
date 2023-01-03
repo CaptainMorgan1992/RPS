@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="startpage.css">
+
+</head>
+<body>
+    <div class="grid-container">
+        <header id ="headerGrid">
+            <h1 id="headerFlex">Rock, paper & Scissors</h1>
+        </header>
+        <section id="radioGrid">
+            <div id="radioFlex"> 
+                <div id="radioLabel">
+                    <form action="index.html" onsubmit="callme()">
+                         <label id ="bestOfChoice" for="bestOf">Best of : </label><br>
+                         <input type="radio" id ="3" name="bestOf" value="3" onchange="onBtnChange(event)">
+                         <label for="3">3 </label>
+                         <input type="radio" id ="5" name="bestOf" value="5" onchange="onBtnChange(event)">
+                         <label for="5">5</label>
+                </div>
+                <div id="userLabel">
+                        <label for="userName">Enter your username:</label>
+                        <input id="userInput" type="text"><br>
+                        <button id="submit" type="submit" value="submit" onclick="func()">Submit</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </section> 
+        <footer id="footerGrid">
+            <div id="footerFlex">This is some footer information</div>
+        </footer>
+    </div>
+
+<script>
+    
+    const text= document.querySelector("#headerFlex");
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = " ";
+
+    for(let i=0; i< splitText.length; i++) {
+        text.innerHTML +="<span>" + splitText[i] +  "</span>";
+    }
+
+    let char = 0;
+    let timer = setInterval(onTick, 50);
+
+    function onTick() {
+        const span = text.querySelectorAll("span")[char];
+        span.classList.add("fade");
+        char++;
+        if(char === splitText.length) {
+            complete();
+            return;
+        }
+
+    }
+
+    function complete () {
+        clearInterval(timer);
+        timer = null;
+    }
+</script>
+  <script src="main.js"></script>
+</body>
+</html>

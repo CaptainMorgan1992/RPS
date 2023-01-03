@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+* {
+    background-color: black;
+    color: white;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-rows: 40% 80% 20%;
+    grid-template-columns: 100%;
+    gap: 3%;
+    padding: 3%
+}
+
+#headerGrid {
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#radioGrid {
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+
+#footerGrid {
+    display: grid;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 7%;
+}
+
+#headerFlex {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Zen Dots';
+    font-size: 4vw;
+    text-transform: uppercase;
+    /*transition : all 5s ease;*/
+}
+
+/*header {
+    transition : all 5s ease;
+}*/
+
+
+span {
+   /* opacity: 0;*/
+    transition: all 1.2s ease;
+}
+
+span.fade {
+    color: rgb(173, 173, 255)
+}
+
+#radioFlex {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2vw;
+    font-family: 'Zen Dots';
+}
+
+
+#footerFlex {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-family: 'Zen Dots';
+    padding: 2%;
+}
+
+
+#radiolabel {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+
+.submit {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 4%;
+    border-style: groove;
+    border: 3px solid rgb(216, 205, 255);
+    font-size: 1vw;
+    border-radius: 10%;
+}
+
+/*
+@keyframes bounce {
+    0%, 25%, 50%, 75%, 90%, 100% {
+        transform: translateY(0);}
+         15%, 40% {
+        transform: translateY(-20px); }
+        65%, 80% {
+        transform: translateY(-15px); }
+        95% {
+            transform: translateY(-5px); } }
+
+.submit:hover {
+    animation: bounce 2s linear;
+}*/
+
+
+input{
+    margin-top: 5%;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Zen Dots';
+    padding: 1%
+}
+
+#userLabel button {
+background-color: rgb(189, 167, 231);
+font-family:  'Zen Dots';
+border-radius: 20%;
+display: flex;
+align-self: center;
+text-align: center;
+box-shadow: 0 0 20px 2px rgb(170, 149, 247);
+transition-duration: 0.4s;
+overflow: hidden; 
+cursor: pointer;
+padding: 10px 20px;
+}
+
+#userLabel button:hover {
+    color:rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 35px 15px rgba(114, 116, 10, 0.3);
+
+}
+
+/*
+#userLabel button:hover {
+    content: "";
+    background: #f7cd74;
+    display: block;
+    position: absolute;
+    padding-top: 1%;
+    padding-left: 1%;
+    margin-left: -1px!important;
+    margin-top: -5%;
+    opacity: 0;
+    transition: all 0.01s
+}*/
+
+
+#radioLabel label {
+    text-align: center;
+    
+}
+
+#userLabel{
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7%;
+}
+
+#userLabel input {
+   width: 50%;
+   display: flex;
+   margin-left: 23%;
+   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 950px) {
+    #userLabel {
+        font-size: 2vw;
+        text-align: center;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-rows: 40% 90% 20%;;
+    }
+    #radioGrid {
+        margin-top: 5%;
+    }
+    
+    #footerGrid {
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 620px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: 40% 100% 70%;
+        row-gap: 30%;
+    }
+    #footerGrid {
+        margin-top: 30%;
+    }
+    #radioGrid {
+        margin-top: 2%;
+    }
+    #userLabel label {
+        font-size: 6vw;
+    }
+    #radioLabel label{
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 430px) {
+    #userLabel label {
+        font-size: 4vw;
+    }
+
+    #radioLabel label{
+        font-size: 6vw;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header id="headerGrid">
+        <div id="headerFlex">Rock, Paper, Scissors</div>
+        <h3 id="h3">Welcome</h3>
+        <h4 id="selectedRounds">Best of:</h4>
+      </header>
+      <div id="user">
+        <article id="userArticleFlex">
+          <div id="userScore">
+            <div class="scoreBoard">
+              <span id="user-score">0</span>
+            </div>
+          </div>
+          <span id="user-Name">userName</span>
+        </article>
+      </div>
+      <div id="symbols">
+        <div id="symbolsflex">
+          <div id="images">
+            <div class="choice" id="r"><img src="rock.png" /></div>
+            <div class="choice" id="p"><img src="paper.png" /></div>
+            <div class="choice" id="s"><img src="scissors.png" /></div>
+          </div>
+        </div>
+      </div>
+      <div id="computer">
+        <article id="computerArticleFlex">
+          <div id="computerScore">
+            <div class="score-board">
+              <span id="computer-score">0</span>
+            </div>
+          </div>
+          <div id="computerName">computerName</div>
+        </article>
+      </div>
+      <div id="gameInfo">
+        <div class="result">
+          <article id="gameInfoFlex">Let's play!</article>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const text = document.querySelector("#headerFlex");
+      const strText = text.textContent;
+      const splitText = strText.split("");
+      text.textContent = " ";
+
+      for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += "<span>" + splitText[i] + "</span>";
+      }
+
+      let char = 0;
+      let timer = setInterval(onTick, 50);
+
+      function onTick() {
+        const span = text.querySelectorAll("span")[char];
+        span.classList.add("fade");
+        char++;
+        if (char === splitText.length) {
+          complete();
+          return;
+        }
+      }
+
+      function complete() {
+        clearInterval(timer);
+        timer = null;
+      }
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
